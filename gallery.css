@@ -1,0 +1,43 @@
+.image {
+    transition: transform 0.3s ease-in-out; 
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+.image:hover {
+    transform: scale(1.5); /* expand to 1.5x of original size */
+    z-index: 1; /* show above any other things */
+}
+
+#modal {
+    /* to get fixed-size modal despite of various image sizes */
+    width: 270px;
+    height: 270px;
+}
+.modalImage {
+    width: 270px; /* define the width to prevent images with exceeded width */
+    object-fit: scale-down; /* scale down the image to fit into the parent element */
+}
+/* For screens larger than 412px */
+@media (min-width: 413px) {
+    #modal {
+        width: 390px;
+        height: 350px;
+    }
+    .modalImage {
+        width: 390px;
+        object-fit: scale-down;
+    }
+}
+
+/* for whole container */
+.fixed-width {
+    width: 95%; /* Default width for small screens */
+}
+/* For screens larger than 599px */
+@media (min-width: 600px) {
+    .fixed-width {
+        width: 600px;
+    }
+}
+
